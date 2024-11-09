@@ -17,7 +17,7 @@ The project requirements are as follows:
 - The program should run smoothly and handle window management seamlessly (minimizing, closing, etc.).
 - Use specific controls for player movement and interactions.
 
-![Intro](path/to/intro-image.png)
+![Intro](https://github.com/roma-sh/Cub3D/blob/master/textures/intro.png)
 
 ## Development Steps
 
