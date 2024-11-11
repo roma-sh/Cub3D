@@ -25,6 +25,7 @@ void	find_map_width(t_game *game)
 	game->width_map = temp;
 }
 
+// find the initial player coordinates
 void	find_start_pos(t_game *game)
 {
 	int	x;
@@ -54,6 +55,7 @@ void	find_start_pos(t_game *game)
 	check_start_pos_flag(flag, game);
 }
 
+// check if there is a player in the map
 void	check_start_pos_flag(int flag, t_game *game)
 {
 	if (flag != 1)
@@ -72,7 +74,7 @@ void	validate_player_char(char c)
 		exit(EXIT_FAILURE);
 	}
 }
-
+//fill the **map from the map file 
 void	fill_real_map(t_game *game, char *reader)
 {
 	int	y;

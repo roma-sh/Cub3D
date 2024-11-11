@@ -1,6 +1,22 @@
 
 #include "../cub3d.h"
 
+
+// initialize the mlx library:
+// game:mlx: Main MLX handle, carries important data in regards to the program.
+// game:mlx_img: An image with an individual buffer that can be rendered.
+/*
+typedef struct mlx_image
+{
+	const uint32_t	width;
+	const uint32_t	height;
+	uint8_t*		pixels;
+	mlx_instance_t*	instances;
+	int32_t			count;
+	bool			enabled;
+	void*			context;
+}	mlx_image_t;
+*/
 int	init_mlx(t_game *game)
 {
 	game->mlx = mlx_init(1440, 960, "CUB3D", false);

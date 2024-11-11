@@ -23,7 +23,9 @@ SRC		 =	$(SRC_DIR)main.c\
 			$(SRC_DIR)parsing_variables.c\
 			$(SRC_DIR)parsing_main_map.c\
 			$(SRC_DIR)utilities.c\
-			$(SRC_DIR)window_init.c
+			$(SRC_DIR)drawing.c\
+			$(SRC_DIR)window_init.c\
+			$(SRC_DIR)init_game.c
 GNL_SRC  =	$(GNL_DIR)get_next_line.c $(GNL_DIR)get_next_line_utils.c
 
 OBJ		 =	$(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)

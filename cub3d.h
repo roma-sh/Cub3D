@@ -86,7 +86,6 @@ void	find_start_pos(t_game *game);
 void	validate_player_char(char c);
 void	check_start_pos_flag(int flag, t_game *game);
 void	fill_real_map(t_game *game, char *reader);
-void	check_wall_boarders(int x, int y, t_game *game);
 int		is_only_spaces(char *str);
 void	ft_setup_temp_map(t_game *game, int x, int y);
 void	check_walls(char **map, int x, int y, t_game *game);
@@ -137,4 +136,8 @@ void	finish(t_game *game);
 void	free_map(t_game *game);
 void	delete_texs(t_game *game);
 
+// Drawing:
+void	draw(void *param);
+void	draw_sky_ground(t_game *game);
+int32_t	pixel_color(int r, int g, int b, int a);
 #endif

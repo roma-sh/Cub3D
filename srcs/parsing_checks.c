@@ -22,7 +22,8 @@ int	arg_check(int argc, char *arg)
 	}
 	return (1);
 }
-
+// create a copy of **map and use the copy to check if the map is valid
+// and there is a valid path in it.
 void	ft_setup_temp_map(t_game *game, int x, int y)
 {
 	int		i;
@@ -31,18 +32,19 @@ void	ft_setup_temp_map(t_game *game, int x, int y)
 
 	temp_map = malloc(game->height_map * sizeof(char *));
 	if (temp_map == NULL)
-		ft_error_exit(game, "Error\nMemory allocation failed");
+		ft_error_exit(game, "Error\nMemory allocation failed\n");
 	i = -1;
 	while (++i < game->height_map)
 	{
 		(temp_map)[i] = ft_strdup(game->map[i]);
+		// memory handeling: if the copying faild free the previous lines:
 		if ((temp_map)[i] == NULL)
 		{
 			j = -1;
 			while (++j < i)
 				free((temp_map)[j]);
 			free(temp_map);
-			ft_error_exit(game, "Error\nMemory allocation failed");
+			ft_error_exit(game, "Error\nMemory allocation failed\n");
 		}
 	}
 	check_walls(temp_map, x, y, game);
@@ -75,6 +77,10 @@ void	check_walls(char **map, int x, int y, t_game *game)
 	check_walls(map, x, y + 1, game);
 }
 
+
+// check if the colors in the map file
+// are a valid rgb colors
+// then add the color to the struct
 int	check_rgb(char *variable, int **color)
 {
 	int		i;

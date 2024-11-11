@@ -1,6 +1,15 @@
 
 #include "../cub3d.h"
 
+
+/// @brief will open the map file which was passed as @param map
+/// and first will fill the map variable: teh texture and the colors
+/// then will fill the map it self to a char **
+/// it will detrmind the player coordinates and make
+/// sure he is not located on the outter walls
+/// and the last step is to make a copy from **map to use
+/// to check if there is open outter walls and if
+/// there is a valid path for the player
 void	map_reader(t_game *game, char *map)
 {
 	char	*reader;
@@ -26,19 +35,20 @@ void	map_reader(t_game *game, char *map)
 	close(game->map_fd);
 }
 
+
+// check if the player is located on the outter walls:
 void	check_wall_boarders(int x, int y, t_game *game)
 {
-	(void)game;
 	if (x == 0 || y == 0)
 	{
 		printf("No closed map!\n");
 		exit(EXIT_FAILURE);
 	}
-	if (y + 1 == ' ' || y + 1 == '\0' || y + 1 == '\n')
-	{
-		printf("No closed map!\n");
-		exit(EXIT_FAILURE);
-	}
+	// if (y + 1 == ' ' || y + 1 == '\0' || y + 1 == '\n')
+	// {
+	// 	printf("No closed map!\n");
+	// 	exit(EXIT_FAILURE);
+	// }  // need modify to take teh map[]
 	if (x + 1 >= game->height_map)
 	{
 		printf("No closed map!\n");
@@ -63,7 +73,7 @@ int	is_only_spaces(char *str)
 	}
 	return (0);
 }
-
+// load the texture into the struct tex to draw it later on the window
 void	init_textures(t_game *game)
 {
 	ft_load_image(game, &game->tex.east_image, game->ea);
@@ -107,6 +117,12 @@ void	keep_loading(t_game *game)
 	ft_load_image(game, &game->tex.fire_flame[20], "./textures/fire/fl21.png");
 }
 
+
+/*
+To draw the texture into mlx_img image which is sent to the window
+we should convert the .png image
+into mlx_texture_t type and then into mlx_image_t type
+*/
 void	ft_load_image(t_game *game, mlx_image_t **image, const char *file_path)
 {
 	mlx_texture_t	*temp_texture;

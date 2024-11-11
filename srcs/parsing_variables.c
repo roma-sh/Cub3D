@@ -1,6 +1,11 @@
 
 #include "../cub3d.h"
 
+
+// to take the variables from the map file:
+// the specific texture for each wall
+// the colors of the sky and the ground
+
 void	fill_map_variables(t_game *game)
 {
 	char	*variable;

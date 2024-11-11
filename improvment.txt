@@ -1,0 +1,1 @@
+check the map if around the player there is empty place ' ' or '\0' or '\n'
