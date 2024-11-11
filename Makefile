@@ -19,6 +19,10 @@ GNL_DIR =	./Get_next_line/
 SRC		 =	$(SRC_DIR)main.c\
 			$(SRC_DIR)parsing_checks.c\
 			$(SRC_DIR)boss.c\
+			$(SRC_DIR)parsing.c\
+			$(SRC_DIR)parsing_variables.c\
+			$(SRC_DIR)parsing_main_map.c\
+			$(SRC_DIR)utilities.c\
 			$(SRC_DIR)window_init.c
 GNL_SRC  =	$(GNL_DIR)get_next_line.c $(GNL_DIR)get_next_line_utils.c
 
