@@ -31,6 +31,19 @@ typedef struct s_texture
 	mlx_image_t	*fire_flame[21];
 }	t_texture;
 
+typedef struct s_player
+{
+	float			x_player;
+	float			y_player;
+	float			dx_player;
+	float			dy_player;
+	float			angle_player;
+	float			start_angle;
+	int				mouse_pos;
+	int				health;
+	bool			dead;
+}	t_player;
+
 typedef struct s_game
 {
 	mlx_t			*mlx;
@@ -48,6 +61,16 @@ typedef struct s_game
 	int				width_map;
 	int				height_map;
 	t_texture		tex;
+	int				window_width;
+	int				window_height;
+	int				map_unit_x;
+	int				map_unit_y;
+	int				map_unit_size;
+	int				frame_count;
+	int				frame_count2;
+	const char		*name;
+	t_player		player;
+	bool			intro;
 
 }	t_game;
 
@@ -70,8 +93,13 @@ void	check_walls(char **map, int x, int y, t_game *game);
 int		check_rgb(char *variable, int **color);
 void	validate_rgb_count(char **c);
 
-// Initializations:
+// Initializations of mlx:
 int	init_mlx(t_game *game);
+
+// Initializations of game:
+void	init_game(t_game *game);
+void	init_player(t_game *game);
+void	init_map(t_game *game);
 
 // Proccessing:
 void	loops(t_game *game);
@@ -102,6 +130,7 @@ void	free_temp(t_game *game, char **temp);
 // Error handeling
 void	ft_error_exit(t_game *game, const char *msg);
 void	ft_error_tex(void);
+void	ft_error(void);
 
 // Finish game:
 void	finish(t_game *game);

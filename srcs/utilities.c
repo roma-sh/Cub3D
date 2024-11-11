@@ -74,3 +74,9 @@ void	delete_texs(t_game *game)
 	while (i < 21)
 		mlx_delete_image(game->mlx, game->tex.fire_flame[i++]);
 }
+
+void	ft_error(void)
+{
+	fprintf(stderr, "%s", mlx_strerror(mlx_errno));
+	exit(EXIT_FAILURE);
+}
