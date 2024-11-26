@@ -13,6 +13,25 @@
 
 # define PI 3.1415926535
 
+typedef struct s_rend
+{
+	float		wall_distance;
+	float		wall_x;
+	float		wall_y;
+	float		texture_pos_x_rate;
+	uint32_t	texture_x;
+	uint32_t	texture_y;
+	mlx_image_t	*current_texture;
+	float		wall_height;
+	bool		hor_is_door;
+	bool		ver_is_door;
+	bool		hor_is_fire;
+	bool		ver_is_fire;
+	bool		hor_is_flame;
+	bool		ver_is_flame;
+
+}			t_rend;
+
 typedef struct s_texture
 {
 	mlx_image_t	*north_image;
@@ -30,6 +49,24 @@ typedef struct s_texture
 	mlx_image_t	*black_hole;
 	mlx_image_t	*fire_flame[21];
 }	t_texture;
+
+typedef struct s_raycast
+{
+	float		rx;
+	float		ry;
+	float		ra;
+	float		rx_step;
+	float		ry_step;
+	float		hor_distance;
+	float		hor_x;
+	float		hor_y;
+	float		ver_distance;
+	float		ver_x;
+	float		ver_y;
+	int			map_index_x;
+	int			map_index_y;
+
+}			t_raycast;
 
 typedef struct s_player
 {
@@ -71,6 +108,9 @@ typedef struct s_game
 	const char		*name;
 	t_player		player;
 	bool			intro;
+	t_raycast		ray;
+	t_rend			rend;
+
 
 }	t_game;
 
@@ -140,4 +180,17 @@ void	delete_texs(t_game *game);
 void	draw(void *param);
 void	draw_sky_ground(t_game *game);
 int32_t	pixel_color(int r, int g, int b, int a);
+
+//Calculations:
+void	calculate_ray(t_game *game);
+void	reset_rays(t_game *game, int *flag);
+void	calculate_vertical_intraction(t_game *game, int *dof, int *flag);
+void	calculate_horizontal_intraction(t_game *game, int *dof);
+void	get_hor_point(t_game *game, int dof);
+void	get_ver_point(t_game *game, int dof);
+void	get_wall(t_game *game, int flag);
+void	set_hor_tex(t_game *game);
+void	set_ver_tex(t_game *game);
+void	fix_fisheye(t_game *game);
+
 #endif

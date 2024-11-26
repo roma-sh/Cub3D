@@ -85,3 +85,24 @@ int32_t	pixel_color(int r, int g, int b, int a)
 {
 	return (r << 24 | g << 16 | b << 8 | a);
 }
+
+void	reset_rays(t_game *game, int *flag)
+{
+	game->ray.hor_distance = 100000;
+	game->ray.ver_distance = 100000;
+	game->ray.rx = 0;
+	game->ray.ry = 0;
+	game->ray.rx_step = 0;
+	game->ray.ry_step = 0;
+	game->ray.hor_x = 0;
+	game->ray.hor_y = 0;
+	game->ray.ver_x = 0;
+	game->ray.ver_y = 0;
+	*flag = 0;
+	game->rend.hor_is_door = false;
+	game->rend.ver_is_door = false;
+	game->rend.hor_is_fire = false;
+	game->rend.ver_is_fire = false;
+	game->rend.hor_is_flame = false;
+	game->rend.ver_is_flame = false;
+}

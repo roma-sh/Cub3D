@@ -26,5 +26,31 @@ void	draw(void *param)
 	{
 		mlx_delete_image(game->mlx, game->tex.intro);
 		draw_sky_ground(game);
+		calculate_ray(game);
+
+	}
+}
+
+void	calculate_ray(t_game *game)
+{
+	int	r_num;
+	int	dof;
+	int	flag;
+
+	r_num = 0;
+	game->ray.ra = game->player.angle_player - 0.523598;
+	while (r_num < 1440)
+	{
+		dof = 0;
+		reset_rays(game, &flag);
+		calculate_horizontal_intraction(game, &dof);
+		get_hor_point(game, dof);
+		dof = 0;
+		calculate_vertical_intraction(game, &dof, &flag);
+		get_ver_point(game, dof);
+		get_wall(game, flag);
+		render_walls(game, r_num);
+		game->ray.ra += 0.01745329 / 24;
+		r_num++;
 	}
 }
