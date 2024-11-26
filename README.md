@@ -35,12 +35,12 @@ Parse map information from the **.cub** file to extract wall textures, floor and
 ### 4. Divide the Window into Blocks
 Render each section of the window as a block based on the map structure and set the player's initial position.
 
-![Blocks](path/to/blocks-image.png)
+![Blocks](https://github.com/roma-sh/Cub3D/blob/master/images/block.png)
 
 ### 5. Calculate Ray Distances
 Calculate ray distances for vertical and horizontal lines, determining where rays intersect with walls and selecting the shortest distance.
 
-![Rays](path/to/rays-image.png)
+![Rays](https://github.com/roma-sh/Cub3D/blob/master/images/raycasting.png)
 
 ### 6. Render Walls
 Render the walls wherever a ray hits by calculating the wall height and applying the appropriate texture based on the wall's direction.
