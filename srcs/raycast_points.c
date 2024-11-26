@@ -59,3 +59,35 @@ void	get_ver_point(t_game *game, int dof)
 	}
 }
 
+bool	is_hor_wall(t_game *game)
+{
+	if (game->map[game->ray.map_index_y][game->ray.map_index_x] == '1')
+		return (true);
+	else if (game->map[game->ray.map_index_y][game->ray.map_index_x] == '2')
+	{
+		game->rend.hor_is_door = true;
+		return (true);
+	}
+	else if (game->map[game->ray.map_index_y][game->ray.map_index_x] == '3')
+	{
+		game->rend.hor_is_fire = true;
+		return (true);
+	}
+	return (false);
+}
+bool	is_ver_wall(t_game *game)
+{
+	if (game->map[game->ray.map_index_y][game->ray.map_index_x] == '1')
+		return (true);
+	else if (game->map[game->ray.map_index_y][game->ray.map_index_x] == '2')
+	{
+		game->rend.ver_is_door = true;
+		return (true);
+	}
+	else if (game->map[game->ray.map_index_y][game->ray.map_index_x] == '3')
+	{
+		game->rend.ver_is_fire = true;
+		return (true);
+	}
+	return (false);
+}

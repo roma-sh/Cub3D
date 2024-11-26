@@ -19,6 +19,11 @@ GNL_DIR =	./Get_next_line/
 SRC		 =	$(SRC_DIR)main.c\
 			$(SRC_DIR)parsing_checks.c\
 			$(SRC_DIR)boss.c\
+			$(SRC_DIR)rendering_adds.c\
+			$(SRC_DIR)raycast_calculations.c\
+			$(SRC_DIR)raycast_points.c\
+			$(SRC_DIR)rendering.c\
+			$(SRC_DIR)wall_texture.c\
 			$(SRC_DIR)parsing.c\
 			$(SRC_DIR)parsing_variables.c\
 			$(SRC_DIR)parsing_main_map.c\

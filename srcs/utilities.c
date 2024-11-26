@@ -106,3 +106,19 @@ void	reset_rays(t_game *game, int *flag)
 	game->rend.hor_is_flame = false;
 	game->rend.ver_is_flame = false;
 }
+
+uint32_t	get_color(uint32_t	texture_color)
+{
+	t_color	clr;
+
+	clr.channel[ALPHA] = (texture_color >> 24) & 0xFF;
+	clr.channel[RED] = (texture_color >> 16) & 0xFF;
+	clr.channel[GREEN] = (texture_color >> 8) & 0xFF;
+	clr.channel[BLUE] = texture_color & 0xFF;
+	return (clr.color);
+}
+
+float	calculate_dis(float x1, float y1, float x2, float y2)
+{
+	return (sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)));
+}

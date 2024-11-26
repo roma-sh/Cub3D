@@ -13,6 +13,20 @@
 
 # define PI 3.1415926535
 
+enum e_channel
+{
+	ALPHA,
+	RED,
+	GREEN,
+	BLUE,
+};
+
+typedef union s_color
+{
+	uint8_t		channel[4];
+	uint32_t	color;
+}			t_color;
+
 typedef struct s_rend
 {
 	float		wall_distance;
@@ -180,6 +194,7 @@ void	delete_texs(t_game *game);
 void	draw(void *param);
 void	draw_sky_ground(t_game *game);
 int32_t	pixel_color(int r, int g, int b, int a);
+uint32_t	get_color(uint32_t	texture_color);
 
 //Calculations:
 void	calculate_ray(t_game *game);
@@ -192,5 +207,16 @@ void	get_wall(t_game *game, int flag);
 void	set_hor_tex(t_game *game);
 void	set_ver_tex(t_game *game);
 void	fix_fisheye(t_game *game);
+float	calculate_dis(float x1, float y1, float x2, float y2);
+bool	is_ver_wall(t_game *game);
+bool	is_hor_wall(t_game *game);
+
+// Rendering:
+void	render_walls(t_game *game, int r_num);
+bool	animate_fire(t_game *game, int r_num);
+void	draw_tex_slice(t_game *game, int shift_to_down, int r_num, int offset);
+void	draw_far_slice(t_game *game, int r_num, int shift_to_down);
+void	draw_close_slice(t_game *game, int r_num, int offset);
+bool	checker(t_game *game);
 
 #endif
