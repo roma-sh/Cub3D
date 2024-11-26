@@ -45,7 +45,7 @@ Calculate ray distances for vertical and horizontal lines, determining where ray
 ### 6. Render Walls
 Render the walls wherever a ray hits by calculating the wall height and applying the appropriate texture based on the wall's direction.
 
-![Game](path/to/game-image.png)
+![Game](https://github.com/roma-sh/Cub3D/blob/master/images/game.png)
 
 ### 7. Draw the Minimap
 Render a minimap in the upper left corner of the screen, showing the player's position within the map.
