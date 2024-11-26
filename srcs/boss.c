@@ -5,6 +5,7 @@
 void	loops(t_game *game)
 {
 	mlx_loop_hook(game->mlx, draw, game);
+	mlx_loop_hook(game->mlx, keyboard_control, game);
 	mlx_loop(game->mlx);
 	mlx_terminate(game->mlx);
 }

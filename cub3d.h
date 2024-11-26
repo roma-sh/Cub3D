@@ -219,4 +219,14 @@ void	draw_far_slice(t_game *game, int r_num, int shift_to_down);
 void	draw_close_slice(t_game *game, int r_num, int offset);
 bool	checker(t_game *game);
 
+// Movement:
+void	keyboard_control(void *param);
+void	sw(t_game *game);
+void	ad(t_game *game);
+void	left_right(t_game *game);
+
+void	coordinate_corrector(t_game *game, char c);;
+void	coordinate_corrector2(t_game *game, char c);
+
+
 #endif

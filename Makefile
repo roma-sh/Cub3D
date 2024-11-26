@@ -19,6 +19,7 @@ GNL_DIR =	./Get_next_line/
 SRC		 =	$(SRC_DIR)main.c\
 			$(SRC_DIR)parsing_checks.c\
 			$(SRC_DIR)boss.c\
+			$(SRC_DIR)movement.c\
 			$(SRC_DIR)rendering_adds.c\
 			$(SRC_DIR)raycast_calculations.c\
 			$(SRC_DIR)raycast_points.c\
