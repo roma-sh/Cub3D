@@ -125,3 +125,30 @@ void	coordinate_corrector2(t_game *game, char c)
 		}
 	}
 }
+
+void	mouse_move(double x, double y, void *param)
+{
+	t_game		*game;
+	static int	previous_x;
+
+	(void)y;
+	game = param;
+	if (x > previous_x)
+	{
+		game->player.angle_player += 0.07;
+		if (game->player.angle_player > 2 * PI)
+			game->player.angle_player -= 2 * PI;
+		game->player.dx_player = cos (game->player.angle_player) * 5;
+		game->player.dy_player = sin (game->player.angle_player) * 5;
+	}
+	else if (x < previous_x)
+	{
+		game->player.angle_player -= 0.07;
+		if (game->player.angle_player < 0)
+			game->player.angle_player += 2 * PI;
+		game->player.dx_player = cos (game->player.angle_player) * 5;
+		game->player.dy_player = sin (game->player.angle_player) * 5;
+	}
+	mlx_set_mouse_pos(game->mlx, game->window_width / 2, game->width_map / 2);
+	previous_x = game->window_width / 2;
+}

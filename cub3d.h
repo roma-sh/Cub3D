@@ -224,9 +224,16 @@ void	keyboard_control(void *param);
 void	sw(t_game *game);
 void	ad(t_game *game);
 void	left_right(t_game *game);
-
-void	coordinate_corrector(t_game *game, char c);;
+void	coordinate_corrector(t_game *game, char c);
 void	coordinate_corrector2(t_game *game, char c);
+void	mouse_move(double x, double y, void *param);
 
-
+// Mini map:
+void	draw_minimap(t_game *game);
+void	get_map_index(t_game *game, int *map_index_x, int *map_index_y);
+void	get_tile_color(t_game *game, uint32_t *tile_color, int x, int y);
+void	draw_miniplayer(t_game *game);
+void	draw_tiles(t_game *game, int xo, int yo, uint32_t tile_color);
+void	draw_line(t_game *game, int *point1, int x1, int y1);
+void	get_next_ponit(int *point1, int *d, int *err, int *point2);
 #endif

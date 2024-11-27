@@ -6,6 +6,8 @@ void	loops(t_game *game)
 {
 	mlx_loop_hook(game->mlx, draw, game);
 	mlx_loop_hook(game->mlx, keyboard_control, game);
+	mlx_set_cursor_mode(game->mlx, MLX_MOUSE_HIDDEN);
+	mlx_cursor_hook(game->mlx, mouse_move, game);
 	mlx_loop(game->mlx);
 	mlx_terminate(game->mlx);
 }
@@ -28,6 +30,8 @@ void	draw(void *param)
 		mlx_delete_image(game->mlx, game->tex.intro);
 		draw_sky_ground(game);
 		calculate_ray(game);
+		draw_minimap(game);
+		draw_miniplayer(game);
 
 	}
 }
