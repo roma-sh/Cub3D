@@ -55,7 +55,7 @@ Render a minimap in the upper left corner of the screen, showing the player's po
 ### 8. Additional Details
 Add extra UI elements like a crosshair, weapon graphics, and a health bar for a more immersive experience.
 
-![Game](https://github.com/roma-sh/Cub3D/blob/master/images/game.png)
+![Game](https://github.com/roma-sh/Cub3D/blob/master/images/game_final.png)
 
 ## Game Controls
 - **Move Forward**: `W`
