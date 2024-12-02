@@ -241,4 +241,10 @@ void	draw_miniplayer(t_game *game);
 void	draw_tiles(t_game *game, int xo, int yo, uint32_t tile_color);
 void	draw_line(t_game *game, int *point1, int x1, int y1);
 void	get_next_ponit(int *point1, int *d, int *err, int *point2);
+
+// Finishing the game:
+void	finish(t_game *game);
+void	delete_texs(t_game *game);
+void	free_map(t_game *game);
+
 #endif
