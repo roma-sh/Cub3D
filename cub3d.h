@@ -218,6 +218,11 @@ void	draw_tex_slice(t_game *game, int shift_to_down, int r_num, int offset);
 void	draw_far_slice(t_game *game, int r_num, int shift_to_down);
 void	draw_close_slice(t_game *game, int r_num, int offset);
 bool	checker(t_game *game);
+void	draw_cross(t_game *game);
+void	draw_weapon(t_game *game);
+void	check_fire(t_game *game);
+void	draw_health(t_game *game);
+void	draw_health_section(t_game *game, mlx_image_t *heal, int x, int y);
 
 // Movement:
 void	keyboard_control(void *param);

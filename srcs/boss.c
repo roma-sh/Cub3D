@@ -32,7 +32,11 @@ void	draw(void *param)
 		calculate_ray(game);
 		draw_minimap(game);
 		draw_miniplayer(game);
-
+		draw_cross(game);
+		draw_weapon(game);
+		check_fire(game);
+		draw_health(game);
+		game->frame_count2++;
 	}
 }
 
